@@ -33,7 +33,7 @@ int itc_positive_list(const vector <int>& mass) {
     }
     else
     for (int i = 0; i < mass.size(); i++)
-        if (mass[i] >= 0)
+        if (mass[i] > 0)
             kol++;
         return kol;
 }
