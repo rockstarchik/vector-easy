@@ -18,16 +18,14 @@ void itc_rev_list(vector <int>& mass) {
 
 
 void itc_rev_par_list(vector <int>& mass) {
-    int le = mass.size();
-    if (0 == le) {
-
+    if (mass.size() == 0) {
+ 
     }
-    for (int i = 0; i < 1 - le % 2; i + 2) {
-        mass[i] = mass[i] + mass[i + 1];
-        mass[i + 1] = mass[i] - mass[i + 1];
-        mass[i] = mass[i] - mass[i + 1];
+    for (int i = 1; i < mass.size(); i += 2) {
+        int t = mass[i];
+        mass[i] = mass[i - 1];
+        mass[i - 1] = t;
     }
-
 
 }
 
