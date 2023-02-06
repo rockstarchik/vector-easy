@@ -16,3 +16,15 @@ void itc_even_parts_list(const vector <int>& mass, vector <int>& mass2) {
 
 
 }
+
+void itc_rev_list(vector <int> &mass){
+int len = mass.size();
+if ( 0 == len){
+
+}
+    for(int i = 0; i < len/2; i++){
+        mass[i] = mass[i] + mass[len - 1 - i];
+        mass[len - 1 - i] = mass[i] - mass[len - 1 - i];
+        mass[i] = mass[i] - mass[len - 1 - i];
+    }
+}
