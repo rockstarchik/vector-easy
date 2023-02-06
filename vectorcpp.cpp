@@ -28,3 +28,26 @@ if ( 0 == len){
         mass[i] = mass[i] - mass[len - 1 - i];
     }
 }
+void itc_rev_par_list(vector <int> &mass){
+int le = mass.size();
+if ( 0 == le){
+
+}
+for(int i = 0; i < 1 - le%2;i+2){
+    mass[i] = mass[i] + mass[i+1];
+    mass[i+1]=mass[i]-mass[i+1];
+    mass[i]=mass[i]-mass[i+1];
+}
+}
+
+void  int_rshift_list(vector <int> &mass){
+int le = mass.size();
+if ( 0 == le){
+
+}
+int c = mass[le-1];
+for(int i = le - 1; i > 0;i--){
+    mass[i] = mass[i-1];
+}
+mass[0] = c;
+}
