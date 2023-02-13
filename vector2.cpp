@@ -30,7 +30,7 @@ void itc_rev_par_list(vector <int>& mass) {
 }
 
 void itc_rshift_list(vector <int> &mass) {
-    if (mass.size() < 0) {
+    if (mass.size() <= 0) {
         return;
     }
     else{
@@ -43,28 +43,27 @@ void itc_rshift_list(vector <int> &mass) {
 }
 
 void itc_super_shift_list(vector <int>& mass, int n) {
-    int le = mass.size();
+    int len = mass.size();
     int k, p;
-    if (0 == le) {
-
-    }
-    if (n < 0) {
-        n = -n;
-        for (p = 0; p < n; p++) {
-            k = mass[0];
-            for (int i = 0; i < le - 1; i++) {
-                mass[i] = mass[i + 1];
+    if (len > 0) {
+        if (n < 0) {
+            n = -n;
+            for (p = 0; p < n; p++) {
+                k = mass[0];
+                for (int i = 0; i < len - 1; i++) {
+                    mass[i] = mass[i + 1];
+                }
+                mass[len - 1] = k;
             }
-            mass[le - 1] = k;
         }
-    }
-    else {
-        for (p = 0; p < n; p++) {
-            k = mass[le - 1];
-            for (int i = le - 1; i > 0; i--) {
-                mass[i] = mass[i - 1];
+        else {
+            for (p = 0; p < n; p++) {
+                k = mass[len - 1];
+                for (int i = len - 1; i > 0; i--) {
+                    mass[i] = mass[i - 1];
+                }
+                mass[0] = k;
             }
-            mass[0] = k;
         }
     }
 }
