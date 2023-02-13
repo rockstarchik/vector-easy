@@ -29,7 +29,7 @@ void itc_rev_par_list(vector <int>& mass) {
 
 }
 
-void itc_rshift_list(vector <int>& mass) {
+void itc_rshift_list(vector <int> &mass) {
     if (mass.size() < 0) {
         return;
     }
